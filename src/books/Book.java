@@ -1,3 +1,5 @@
+package books;
+
 public class Book implements Comparable{
 	private String title;
 	private String author;
@@ -8,25 +10,36 @@ public class Book implements Comparable{
 
 	}
 
-	public String getTitle(){}
-	public String getAuthor(){}
-	public int getYear(){}
+	public String getTitle(){
+		return title;
+	}
+	
+	public String getAuthor(){
+		return author;
+	}
+	
+	public int getYear(){
+		return year;
+	}
 	
 	@Override
-	public String toString(){}
-	public static List<Book> getList(String file){}
-
+	public String toString(){
+		String blurb = title + " by " + author + "("+ year + ")";
+		return blurb;
+	}
+	 
+	public static List<Book> getList(String file){
+		
+	}
 
 
 
 @Override
-
-	public int compareTo(){
-
-	/*Comparable implements the natural order but in class Book it should sort by 	
+public int compareTo(Object o) {
+	/* TODO Comparable implements the natural order but in class Book it should sort by 	
 	title. Class book is immutable. It has getters but no setters. */
-
-	}
+	return 0;
+}
 
 
 }
