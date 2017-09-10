@@ -33,7 +33,7 @@ public class Book implements Comparable{
 	
 	@Override
 	public String toString(){
-		String blurb = getTitle() + " by " + getAuthor() + "("+ getYear() + ")";
+		String blurb = getTitle() + " by " + getAuthor() + " ("+ getYear() + ")";
 		return blurb;
 	}
 	 
