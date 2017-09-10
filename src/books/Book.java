@@ -1,5 +1,12 @@
 package books;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Book implements Comparable{
 	private String title;
 	private String author;
@@ -28,7 +35,16 @@ public class Book implements Comparable{
 		return blurb;
 	}
 	 
-	public static List<Book> getList(String file){
+	public static ArrayList<Book> getList(String file) throws IOException{
+		
+		BufferedReader reader = new BufferedReader(new FileReader("books.csv"));
+		String text = null;
+		while((text = reader.readLine()) != null){
+			System.out.println(text);
+		}
+		/* If a line doesn’t follow the pattern title,author,year System.err.println("Problem reading in" + title)The
+program should continue reading in the next line. NO exception should be thrown . */
+		return null;
 		
 	}
 
