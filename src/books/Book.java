@@ -53,10 +53,13 @@ program should continue reading in the next line. NO exception should be thrown 
 
 
 @Override
-public int compareTo(Object o) {
+public int compareTo(Object bk) {
+	Book book = (Book)bk;
+	String title1 = this.title;
+	String title2 = book.title;
+	return title1.compareTo(title2);
 	/* TODO Comparable implements the natural order but in class Book it should sort by 	
 	title. Class book is immutable. It has getters but no setters. */
-	return 0;
 }
 
 
