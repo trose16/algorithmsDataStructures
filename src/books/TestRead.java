@@ -14,7 +14,7 @@ public class TestRead {
 		BufferedReader reader = new BufferedReader(new FileReader("books.csv"));
 		String text;
 		Scanner scanner;
-		int index = 0;
+		int column = 0;
 		String title = null;
 		String author = null;
 		int year = 0;
@@ -27,15 +27,15 @@ public class TestRead {
 				scanner.useDelimiter(",");
 				while(scanner.hasNext()){
 					String data = scanner.next();
-					if(index == 0)
+					if(column == 0)
 						title = data;
-					else if (index == 1)
+					else if (column == 1)
 						author = data;
-					else if (index == 2)
+					else if (column == 2)
 						year = Integer.parseInt(data);
-					index ++;
+					column ++;
 				}
-				index = 0;
+				column = 0;
 				bookList.add(bk);
 			}
 		} catch (NumberFormatException error) {
@@ -48,7 +48,7 @@ public class TestRead {
 		for(int i=0; i<bookList.size(); i++){
 			System.out.println(bookList.get(i));
 		}
-		System.out.println("Number of books read in: " + bookList.size());
+		System.out.print("Number of books read in: " + bookList.size());
 	}
 	
 }
