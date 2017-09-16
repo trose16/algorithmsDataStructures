@@ -21,15 +21,15 @@ public class BookApp {
     	//Objects are set up
     	List<Book> bookList = new ArrayList<>();	
     	bookList = Book.getList("books.csv");
-		System.out.println(
+    	System.out.println(
 						"\n Number of books read in: " 
 						+ bookList.size()
 					);
 		
-		//Sorts in natural order
-   	 	System.out.println(" \n ***Sorted Book List***");
+    	//Sorts in natural order
+    	System.out.println(" \n ***Sorted Book List***");
     	Collections.sort(bookList);  	 	
-		for(Book bk : bookList) { 	
+    	for(Book bk : bookList) { 	
    	 		System.out.println(
 	   	 				" " + bk.getTitle() 
 	   	 				+ " by " + bk.getAuthor() 
@@ -37,11 +37,11 @@ public class BookApp {
    	 				);	
    	 	}
 		
-		//Sorts in reverse order
-		Collections.sort(bookList, Collections.reverseOrder());
-   	 	System.out.println(" \n ***Reverse Order Book List*** ");
-		for(Book bk : bookList) { 	
-   	 		System.out.println(
+    	//Sorts in reverse order
+    	Collections.sort(bookList, Collections.reverseOrder());
+    	System.out.println(" \n ***Reverse Order Book List*** ");
+    	for(Book bk : bookList) { 	
+        	System.out.println(
 	   	 				" " + bk.getTitle() 
 	   	 				+ " by " + bk.getAuthor() 
 	   	 				+ " (" + bk.getYear() + ") "
