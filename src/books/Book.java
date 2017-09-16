@@ -74,10 +74,7 @@ public class Book implements Comparable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-		System.out.println("\n Number of books read in: " + bookList.size());
-		for(int i = 0; i< bookList.size(); i++){
-			System.out.println(" " + bookList.get(i).compareTo(i+1));
-		}
+		
 		return bookList;	
 			
 	}
@@ -106,41 +103,6 @@ public class Book implements Comparable{
 		String title2 = book.title;
 		return title1.compareTo(title2);		
 	}
-
-	public static void main(String[] args){
-		String csvFile = "books.csv";
-		String line = "";
-		String csvSplitBy = ",";
-		ArrayList<Book> bookList = new ArrayList<>();
-		
-		try(BufferedReader br = new BufferedReader(new FileReader(csvFile))){		
-			
-			while((line = br.readLine()) != null){
-				
-				try {
-				
-					String[] text = line.split(csvSplitBy);
-					Book book = new Book(text[0], text[1], Integer.parseInt(text[2]));
-					bookList.add(book);
-				
-					} catch(ArrayIndexOutOfBoundsException e){
-						
-						System.out.println(" Problem reading in " + "'" + line + "'");
-						
-					} catch (NumberFormatException e) {
-					
-						System.out.println(" Problem reading in " + "'" + line + "'");
-					} 		
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} 
-		System.out.println("\n Number of books read in: " + bookList.size());
-		for(int i = 0; i< bookList.size(); i++){
-			System.out.println(" " + bookList.get(i));
-		}
-	}
-
 
 }
 
