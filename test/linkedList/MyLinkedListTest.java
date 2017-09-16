@@ -16,6 +16,14 @@ public class MyLinkedListTest{
 		list1.append(30);
 		list1.append(40);
 	}
+	
+	@Test
+	public void testAdd_Size() {
+		list1.add(5, 0);
+		int expected = 5;
+		int actual = list1.size();
+		assertEquals(expected, actual);
+	}
 
 	@Test
 	public void testAdd_First() {

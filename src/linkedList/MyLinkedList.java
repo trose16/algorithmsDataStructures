@@ -57,7 +57,6 @@ public class MyLinkedList<Item> implements Iterable<Item> {
     public int size() {
         return n;     
     }
-
   
     /**
      * Adds the item to this list.
@@ -72,6 +71,22 @@ public class MyLinkedList<Item> implements Iterable<Item> {
         else           oldlast.next = last;
         n++;
         assert check();
+    }
+   
+    /**
+     * Gets item on a specified index
+     * @param index
+     */
+    
+    public Item get(int index){
+    	if(index < 0 || index > n-1)
+    		throw new IllegalArgumentException("index needs to be in [0, index]");
+    	
+    	Node current = first;
+    	for(int i = 0; i < index; i++){
+    		current = current.next;
+    	}
+    	return current.item;
     }
     
     /**
@@ -92,6 +107,10 @@ public class MyLinkedList<Item> implements Iterable<Item> {
     	}  	
 		Node newNode = new Node();
 		newNode.item = item;
+		
+		if (index == 0) {
+			
+		}
 		newNode.next = current.next;
 		
 		current.next = newNode;
