@@ -72,8 +72,7 @@ public class Book implements Comparable<Object>{
 			e.printStackTrace();
 		} 
 		
-		return bookList;	
-			
+		return bookList;			
 	}
 
 	/*
@@ -93,7 +92,7 @@ public class Book implements Comparable<Object>{
 	 * but in class Book it should sort by title.
 	 */
 	
-@Override
+	@Override
 	public int compareTo(Object bk) {
 		Book book = (Book)bk;
 		String title1 = this.title;
