@@ -1,15 +1,11 @@
 package books;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
-public class Book implements Comparable{
+public class Book implements Comparable<Object>{
 	private String title;
 	private String author;
 	private int year;
@@ -20,6 +16,7 @@ public class Book implements Comparable{
 		this.year = year;
 	}
 	
+	// 2nd simple constructor used by test client (BookApp.java).
 	public Book(){}
 
 	public String getTitle(){
@@ -43,7 +40,7 @@ public class Book implements Comparable{
 	 * doesn't follow that format it notifies of the problem and reads the next line.
 	 * @param file
 	 * 
-	 */
+	 */	
 	
 	public static ArrayList<Book> getList(String file) {
 		
@@ -78,12 +75,12 @@ public class Book implements Comparable{
 		return bookList;	
 			
 	}
-	
+
 	/*
 	 * The toString overrides java.lang method 
 	 * and returns custom string representing 
 	 * the books in format: name by author ( year ).
-	 */
+	 */	
 	
 	@Override
 	public String toString(){
@@ -94,8 +91,8 @@ public class Book implements Comparable{
 	/* 
 	 * Comparable implements the natural order 
 	 * but in class Book it should sort by title.
-	 * 
 	 */
+	
 @Override
 	public int compareTo(Object bk) {
 		Book book = (Book)bk;
